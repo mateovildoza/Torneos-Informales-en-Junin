@@ -45,7 +45,7 @@
             text-transform: uppercase;
         }
 
-        /* --- CARDS --- */
+        /* --- CARDS CON MOVIMIENTO --- */
         .card {
             background: #111418;
             border-radius: 25px;
@@ -53,6 +53,15 @@
             margin-bottom: 25px;
             border: 2px solid #2a2d35;
             box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            /* Transición suave para el movimiento */
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efecto al pasar por arriba */
+        .card:hover {
+            transform: scale(1.03); /* Se agranda un 3% */
+            border-color: rgba(0, 198, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 198, 255, 0.1);
         }
 
         .ganador-card {
@@ -61,6 +70,10 @@
             text-align: center;
             border: none;
             box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+        }
+        .ganador-card:hover {
+            transform: scale(1.05) rotate(1deg); /* Un toque extra para el campeón */
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.7);
         }
         .ganador-nombre { font-size: 2.8em; font-weight: 900; text-transform: uppercase; line-height: 0.9; }
 
@@ -88,6 +101,12 @@
             text-align: center;
             margin-top: 30px;
             box-shadow: 0 12px 30px rgba(204, 255, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-ws:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(204, 255, 0, 0.6);
+            background: #e6ff00;
         }
 
         .objetivo-section { border-left: 6px solid #00c6ff; }
@@ -97,7 +116,9 @@
             margin-bottom: 20px; 
             border: 3px solid #ff0055; 
             box-shadow: 0 10px 30px rgba(255, 0, 85, 0.3);
+            transition: transform 0.3s ease;
         }
+        .card.multimedia-card img:hover { transform: scale(1.02); }
 
         .historial-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #333; }
         .h-ganador { color: #ffd700; font-weight: bold; }
@@ -128,7 +149,7 @@
         .insta-link:hover {
             background: #00c6ff;
             color: #000;
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.02);
             box-shadow: 0 10px 20px rgba(0, 198, 255, 0.4);
         }
 
