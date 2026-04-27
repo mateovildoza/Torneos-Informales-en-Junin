@@ -102,8 +102,37 @@
         .historial-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #333; }
         .h-ganador { color: #ffd700; font-weight: bold; }
 
+        /* ESTILO PARA LOS INSTAGRAM (CON ONDA) */
+        .redes-box {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .insta-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 198, 255, 0.3);
+            padding: 12px 20px;
+            border-radius: 15px;
+            color: #00c6ff;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+
+        .insta-link:hover {
+            background: #00c6ff;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 198, 255, 0.4);
+        }
+
         footer { text-align: center; margin-top: 40px; color: #888; padding-bottom: 50px; }
-        .redes a { color: #00c6ff; text-decoration: none; font-weight: bold; font-size: 1.35em; }
     </style>
 </head>
 <body>
@@ -163,9 +192,13 @@
 
     <footer>
         <p>Seguinos para ver cómo es el tenis de mesa avanzado:</p>
-        <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
-            <a href="https://instagram.com/mateotdmjunin" target="_blank">@mateotdmjunin</a>
-            <a href="https://instagram.com/los.bagres.junin" target="_blank">@los.bagres.junin</a>
+        <div class="redes-box">
+            <a href="https://instagram.com/mateotdmjunin" target="_blank" class="insta-link">
+                📸 @mateotdmjunin
+            </a>
+            <a href="https://instagram.com/los.bagres.junin" target="_blank" class="insta-link">
+                🐟 @los.bagres.junin
+            </a>
         </div>
         <p style="margin-top: 45px; font-size: 0.8em; opacity: 0.3;">Organizado por Mateo Vildoza | Junín, BA</p>
     </footer>
