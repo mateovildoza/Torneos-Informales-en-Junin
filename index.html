@@ -13,7 +13,6 @@
             color: #ffffff;
             line-height: 1.6;
             padding-bottom: 40px;
-            /* Degradado de fondo que imita luces de neón sutiles */
             background-image: 
                 radial-gradient(circle at 20% 20%, rgba(0, 198, 255, 0.15) 0%, transparent 30%),
                 radial-gradient(circle at 80% 80%, rgba(255, 0, 85, 0.15) 0%, transparent 30%);
@@ -21,7 +20,7 @@
 
         .container { max-width: 500px; margin: 0 auto; padding: 15px; }
 
-        /* --- CABECERA EXPLOSIVA (CIAN & VERDE LIMA) --- */
+        /* --- CABECERA --- */
         header {
             background: linear-gradient(135deg, #00c6ff, #0072ff);
             padding: 45px 20px;
@@ -42,13 +41,11 @@
         header p { 
             color: #ccff00; 
             font-weight: bold; 
-            font-size: 1em; 
             margin-top: 12px; 
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(204, 255, 0, 0.7);
         }
 
-        /* --- CARDS CON ESTILO NEÓN VIBRANTE --- */
+        /* --- CARDS --- */
         .card {
             background: #111418;
             border-radius: 25px;
@@ -56,14 +53,9 @@
             margin-bottom: 25px;
             border: 2px solid #2a2d35;
             box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
         }
 
-        /* CAMPEÓN DORADO RADIANTE */
+        /* CAMPEÓN DORADO */
         .ganador-card {
             background: linear-gradient(135deg, #ffd700, #ffae00);
             color: #000;
@@ -71,39 +63,20 @@
             border: none;
             box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
         }
-        .ganador-card h2 { 
-            font-size: 1.1em; 
-            text-transform: uppercase; 
-            margin-bottom: 8px; 
-            font-weight: 800; 
-            opacity: 0.8;
-        }
-        .ganador-nombre { 
-            font-size: 2.8em; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            line-height: 0.9; 
-            text-shadow: 2px 2px 0 rgba(255,255,255,0.4);
-        }
-        .ganador-ig { 
-            font-weight: bold; 
-            background: rgba(0,0,0,0.15); 
-            display: inline-block; 
-            padding: 8px 18px; 
-            border-radius: 12px; 
-            margin-top: 15px; 
-            font-size: 1.15em; 
-            border: 1px solid rgba(0,0,0,0.3);
-        }
+        .ganador-nombre { font-size: 2.8em; font-weight: 900; text-transform: uppercase; line-height: 0.9; }
 
-        /* FECHA GIGANTE ELÉCTRICA (LIMA) */
+        /* PROXIMO ENCUENTRO */
         .proximo-card { border-top: 8px solid #ccff00; text-align: center; }
-        .proximo-card h2 { color: #ccff00; margin-bottom: 20px; font-size: 1.6em; text-transform: uppercase; text-shadow: 0 0 10px rgba(204, 255, 0, 0.4); }
-        .fecha-destacada { font-size: 4em; font-weight: 900; color: #fff; display: block; line-height: 0.9; margin-bottom: 20px; text-shadow: 0 0 25px rgba(255,255,255,0.3); }
+        .fecha-destacada { font-size: 4em; font-weight: 900; color: #fff; display: block; line-height: 0.9; margin-bottom: 20px; }
         .dato-torneo { margin-bottom: 15px; font-size: 1.4em; display: flex; align-items: center; justify-content: center; }
-        .dato-torneo span { margin-right: 12px; font-size: 1.5em; text-shadow: 0 0 10px #ccff00; }
+        .dato-torneo span { margin-right: 12px; font-size: 1.5em; }
 
-        /* BOTÓN WHATSAPP EXPLOSIVO */
+        /* DIRECCIÓN (NUEVO) */
+        .direccion-card { border-left: 6px solid #ccff00; }
+        .direccion-card h3 { color: #ccff00; font-size: 1.4em; margin-bottom: 10px; text-transform: uppercase; }
+        .direccion-card p { font-size: 1.2em; font-weight: bold; }
+
+        /* BOTÓN WHATSAPP */
         .btn-ws {
             display: block;
             background: #ccff00;
@@ -112,47 +85,26 @@
             padding: 24px;
             border-radius: 20px;
             font-weight: 900;
-            text-transform: uppercase;
             font-size: 1.5em;
             text-align: center;
             margin-top: 30px;
             box-shadow: 0 12px 30px rgba(204, 255, 0, 0.4);
-            transition: transform 0.1s, box-shadow 0.2s;
         }
-        .btn-ws:hover { box-shadow: 0 15px 35px rgba(204, 255, 0, 0.6); }
-        .btn-ws:active { transform: scale(0.96); box-shadow: 0 5px 15px rgba(204, 255, 0, 0.3); }
 
-        /* SECCIÓN MODALIDAD (CIAN NEÓN) */
         .objetivo-section { border-left: 6px solid #00c6ff; }
-        .objetivo-section h3 { color: #00c6ff; font-size: 1.4em; margin-bottom: 15px; text-transform: uppercase; text-shadow: 0 0 10px rgba(0, 198, 255, 0.4); }
-        .objetivo-section p { font-size: 1.1em; color: #ddd; }
-
-        /* --- MULTIMEDIA (ABAJO, COMO QUERÍAS, CON ESTILO) --- */
-        .card.multimedia-card h3 { color: #ff0055; font-size: 1.4em; margin-bottom: 20px; text-transform: uppercase; text-align: center; text-shadow: 0 0 10px rgba(255, 0, 85, 0.4); }
         .card.multimedia-card img, .card.multimedia-card video { 
             width: 100%; 
             border-radius: 20px; 
             margin-bottom: 20px; 
-            border: 3px solid #ff0055; /* Borde magenta neón */
+            border: 3px solid #ff0055; 
             box-shadow: 0 10px 30px rgba(255, 0, 85, 0.3);
         }
 
-        .historial-title { font-size: 1em; color: #666; text-transform: uppercase; margin-bottom: 18px; text-align: center; font-weight: bold; letter-spacing: 2.5px; }
-        .historial-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #333; font-size: 1.15em; }
-        .h-ganador { color: #ffd700; font-weight: bold; text-shadow: 0 0 8px rgba(255, 215, 0, 0.3); }
+        .historial-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #333; }
+        .h-ganador { color: #ffd700; font-weight: bold; }
 
-        /* FOOTER CON TODA LA ONDA */
-        footer { text-align: center; margin-top: 40px; color: #888; padding-bottom: 50px; font-size: 0.9em; }
-        .redes { margin-top: 15px; display: flex; flex-direction: column; gap: 10px; }
-        .redes a { 
-            color: #00c6ff; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 1.35em; 
-            text-shadow: 0 0 8px rgba(0, 198, 255, 0.4); 
-            transition: 0.2s; 
-        }
-        .redes a:hover { color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+        footer { text-align: center; margin-top: 40px; color: #888; padding-bottom: 50px; }
+        .redes a { color: #00c6ff; text-decoration: none; font-weight: bold; font-size: 1.35em; }
     </style>
 </head>
 <body>
@@ -165,54 +117,53 @@
     </header>
 
     <div class="card ganador-card">
-        <h2>🏆FELICITAMOS AL ÚLTIMO CAMPEÓN:🏆</h2>
+        <h2 style="font-size: 1.1em; text-transform: uppercase; margin-bottom: 8px;">🏆 ÚLTIMO CAMPEÓN:</h2>
         <div class="ganador-nombre">-------</div>
-        <div class="ganador-ig">@-------</div>
+        <div style="font-weight: bold; background: rgba(0,0,0,0.1); padding: 8px; border-radius: 12px; margin-top: 10px;">@-------</div>
     </div>
 
     <div class="card proximo-card">
-        <h2>PRÓXIMO ENCUENTRO</h2>
+        <h2 style="color: #ccff00; margin-bottom: 20px;">PRÓXIMO ENCUENTRO</h2>
         <span class="fecha-destacada">A<br>CONFIRMAR</span>
         
         <div class="dato-torneo"><span>⏰</span> <strong>Hora:</strong> A confirmar</div>
         <div class="dato-torneo"><span>💵</span> <strong>Inscripción:</strong> $4000</div>
         
-        <p style="font-size: 1em; color: #ccff00; background: rgba(204, 255, 0, 0.15); padding: 18px; border-radius: 18px; margin-top: 25px; border: 2px dashed #ccff00; box-shadow: inset 0 0 10px rgba(204, 255, 0, 0.2);">
-            🏓 <strong>Vení 30 min antes</strong> para calentar y preguntar cualquier cosa.
-        </p>
-        
         <a href="https://wa.me/5492364543539" class="btn-ws">¡INSCRIBITE!</a>
     </div>
 
+    <div class="card direccion-card">
+        <h3>📍 UBICACIÓN</h3>
+        <p>Sociedad de Fomento Evita</p>
+        <p style="color: #00c6ff;">Fleming 610</p>
+        <p style="font-size: 0.9em; font-weight: normal; margin-top: 5px; opacity: 0.8;">(Al frente de la plaza Evita)</p>
+    </div>
+
     <div class="card objetivo-section">
-        <h3>¿CÓMO SE JUEGA?</h3>
-        <p>Usamos un formato para que todos jueguen muchos partidos, armamos <strong>grupos al azar de 3 o 4</strong> donde juegan todos contra todos. Los mejores pasan a llaves para definir al campeón del día.</p>
+        <h3 style="color: #00c6ff;">¿CÓMO SE JUEGA?</h3>
+        <p>Grupos al azar de 3 o 4 (todos contra todos). Los mejores pasan a llaves para definir al campeón del día.</p>
     </div>
 
     <div class="card multimedia-card">
-        <h3>EL LUGAR</h3>
-        <div class="media-container">
-            <img src="mesas.jpeg" alt="Mesas">
-            
-            <video controls playsinline poster="lugar.jpeg">
-                <source src="video.mp4" type="video/mp4">
-            </video>
-            
-            <img src="lugar.jpeg" alt="Lugar">
-        </div>
+        <h3 style="color: #ff0055; text-align: center; margin-bottom: 20px;">EL LUGAR</h3>
+        <img src="mesas.jpeg" alt="Mesas">
+        <video controls playsinline poster="lugar.jpeg">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <img src="lugar.jpeg" alt="Lugar">
     </div>
 
-    <div class="historial-title">Anteriores campeones</div>
     <div class="card">
+        <div style="font-size: 1em; color: #666; text-transform: uppercase; margin-bottom: 15px; text-align: center; font-weight: bold;">Anteriores campeones</div>
         <div class="historial-item"><span>Torneo ------</span><span class="h-ganador">🥇 -------</span></div>
         <div class="historial-item"><span>Torneo ------</span><span class="h-ganador">🥇 --------</span></div>
     </div>
 
     <footer>
         <p>Seguinos para ver como es el tenis de mesa avanzado:</p>
-        <div class="redes">
-            <a href="https://instagram.com/mateotdmjunin" target="_blank">@mateotdmjunin</a>
-            <a href="https://instagram.com/los.bagres.junin" target="_blank">@los.bagres.junin</a>
+        <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
+            <a href="https://instagram.com/mateotdmjunin" target="_blank" style="color: #00c6ff; text-decoration: none; font-weight: bold; font-size: 1.3em;">@mateotdmjunin</a>
+            <a href="https://instagram.com/los.bagres.junin" target="_blank" style="color: #00c6ff; text-decoration: none; font-weight: bold; font-size: 1.3em;">@los.bagres.junin</a>
         </div>
         <p style="margin-top: 45px; font-size: 0.8em; opacity: 0.3;">Organizado por Mateo | Junín, BA</p>
     </footer>
