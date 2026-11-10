@@ -11,7 +11,9 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        // CONFIGURACIÓN DE FIREBASE
+        // ==========================================
+        // REEMPLAZÁ ESTO CON TUS DATOS DE FIREBASE
+        // ==========================================
         const firebaseConfig = {
             apiKey: "TU_API_KEY",
             authDomain: "tu-proyecto.firebaseapp.com",
@@ -46,7 +48,7 @@
 
                 querySnapshot.forEach((documento) => {
                     const r = documento.data();
-                    const docId = documento.id; // ID único en Firebase
+                    const docId = documento.id;
 
                     const tarjeta = document.createElement('div');
                     tarjeta.classList.add('tarjeta-resena');
@@ -74,7 +76,7 @@
                             try {
                                 await deleteDoc(doc(db, "resenas", id));
                                 alert("Reseña eliminada correctamente.");
-                                cargarResenas(); // Recargar la lista
+                                cargarResenas();
                             } catch (error) {
                                 console.error("Error al eliminar:", error);
                                 alert("Hubo un error al eliminar la reseña.");
@@ -87,7 +89,7 @@
 
             } catch (e) {
                 console.error("Error cargando reseñas: ", e);
-                contenedor.innerHTML = "<p style='color: #d9534f;'>Error al cargar las reseñas.</p>";
+                contenedor.innerHTML = "<p style='color: #d9534f;'>Configurá tus credenciales de Firebase en el código para ver y guardar reseñas.</p>";
             }
         }
 
@@ -118,8 +120,9 @@
                 cargarResenas();
             } catch (e) {
                 console.error("Error al guardar: ", e);
-                alert('Hubo un error al publicar la reseña.');
+                alert('Hubo un error al publicar. Asegurate de haber configurado bien las credenciales de Firebase.');
             } finally {
+                // Esto asegura que el botón SIEMPRE vuelva a la normalidad aunque falle
                 btn.textContent = "Publicar Reseña";
                 btn.disabled = false;
             }
@@ -250,7 +253,6 @@
         .donde h2, .horarios h2 { font-size: 2.5rem; font-weight: 800; margin: 15px 0; }
         .donde p, .horarios p { font-size: 1.1rem; color: #555; max-width: 700px; margin: 0 auto; }
 
-        /* ESTILOS DE TARJETAS Y BOTÓN DE BORRAR */
         .seccion-resenas { background-color: #f4f6f8; padding: 90px 10%; text-align: left; }
         .seccion-resenas h2 { text-align: center; font-size: 2.8rem; font-weight: 800; margin-bottom: 10px; }
         .resenas-sub { text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 50px; }
@@ -316,170 +318,4 @@
             box-sizing: border-box;
             transition: 0.3s;
         }
-        .campo-grupo input:focus, .campo-grupo textarea:focus {
-            outline: none;
-            border-color: var(--naranja);
-            box-shadow: 0 0 0 3px rgba(240, 84, 35, 0.1);
-        }
-        .btn-enviar-resena {
-            background-color: var(--naranja);
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 14px;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-enviar-resena:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        .final { background-color: var(--fondo-oscuro); color: white; padding: 120px 10%; text-align: center; }
-        .final h2 { font-size: 4rem; font-weight: 900; margin-bottom: 20px; }
-        .final p { font-size: 1.2rem; opacity: 0.7; margin-bottom: 40px; }
-
-        .footer { background-color: #2a2d31; color: #6c757d; padding: 30px 10%; font-size: 0.8rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-
-        @media (max-width: 1000px) {
-            .bio, .como-trabajo, .resenas-contenedor { flex-direction: column; text-align: center; gap: 40px;}
-            .resenas-contenedor { grid-template-columns: 1fr; text-align: left; }
-            .bio-img { width: 100%; max-width: 450px;}
-            .grid-trabajo { grid-template-columns: 1fr; width: 100%; }
-            .hero h1 { font-size: 2.8rem; }
-            .banner-naranja h2 { font-size: 2.8rem; }
-            .navbar { padding: 15px 5%; }
-            .nav-links { display: none; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar">
-        <a href="#" class="nav-logo">Mateo Vildoza</a>
-        <ul class="nav-links">
-            <li><a href="#clases">Clases</a></li>
-            <li><a href="#trabajamos">Qué vemos</a></li>
-            <li><a href="#metodo">Cómo trabajo</a></li>
-            <li><a href="#donde">Ubicación</a></li>
-            <li><a href="#resenas" style="color: var(--naranja);">Reseñas ⭐</a></li>
-            <li><a href="https://wa.me/5492364543539" class="btn-whatsapp" style="padding: 8px 18px; font-size: 0.85rem;">Contacto</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-tag">Mateo Vildoza</div>
-        <h1>Te ayudo a mejorar tu nivel en el <span>tenis de mesa</span></h1>
-        <p>Clases particulares, individuales y personalizadas — trabajamos lo que vos realmente necesitás mejorar.</p>
-        <a href="https://wa.me/5492364543539" class="btn-whatsapp">Escribime por WhatsApp</a>
-    </section>
-
-    <section class="bio">
-        <div class="bio-content">
-            <h2>Me llamo Mateo Vildoza.</h2>
-            <p>Juego al tenis de mesa y compito frecuentemente en torneos en Junín, Pergamino, Rosario y Buenos Aires. Compito en categoría 2da en TMT y 1ra FETEMBA.</p>
-            <p>Me enfoco mucho en el entrenamiento técnico, es algo que vengo trabajando intensamente. Las clases que doy son particulares, individuales y personalizadas — las adapto a cada jugador.</p>
-        </div>
-        <img src="comomellamo2.jpeg" class="bio-img" alt="Mateo Vildoza">
-    </section>
-
-    <section id="clases" class="seccion-blanca">
-        <span class="icon-naranja">🎯</span>
-        <h2>Las clases</h2>
-        <p>Las clases son individuales, nada de grupos. Me enfoco en lo que vos necesitás mejorar. Si sos principiante o si ya jugás hace tiempo, da igual — lo que importa es avanzar desde donde estás.</p>
-    </section>
-
-    <section id="trabajamos" class="trabajamos">
-        <h2>Qué vemos en clase</h2>
-        <p class="sub-trabajo">No hay una lista fija. Trabajo lo que cada jugador necesita. Si algo ya te sale bien, lo pulimos</p>
-        
-        <div class="grid-trabajo">
-            <div class="card"><div class="check">✓</div> Técnica de golpes</div>
-            <div class="card"><div class="check">✓</div> Servicio y recepción</div>
-            <div class="card"><div class="check">✓</div> Estrategia básica</div>
-            <div class="card"><div class="check">✓</div> Corrección de errores</div>
-        </div>
-
-        <div class="box-extra">
-            <span>💡</span>
-            <p>Tambien te puedo decir como entrenar en tu club lo que te falta o como pulir lo que ya te sale</p>
-        </div>
-        <p style="color: #666; font-style: italic; margin-top: 20px;">(No trabajamos preparación física)</p>
-    </section>
-
-    <section id="metodo" class="como-trabajo">
-        <img src="foto2.jpeg" class="bio-img" alt="Entrenamiento">
-        <div class="bio-content">
-            <span style="font-size: 2.5rem; color: var(--naranja);">⚡</span>
-            <h2>Cómo trabajo</h2>
-            <p>Lo primero que hago siempre es escuchar. Quiero que el jugador me cuente qué le cuesta, qué le gustaría mejorar, cómo viene jugando.</p>
-            <p>Después hacemos un peloteo simple — ahí ya puedo detectar errores, ver cómo se mueve, cómo golpea. Empezamos a corregir desde ahí con ejercicios básicos.</p>
-        </div>
-    </section>
-
-    <section class="analisis">
-        <div class="banner-naranja">
-            <span class="tag-opcional">SERVICIO OPCIONAL</span>
-            <h2>Análisis personalizado de juego</h2>
-            <p>Además de las clases, ofrezco un análisis personalizado de tu juego. Te anoto y digo cuáles son tus errores más frecuentes, qué puntos fuertes tenés, qué necesitás trabajar, ejercicios específicos para eso y objetivos concretos para avanzar. Es opcional, pero sirve para mejorar más rápido.</p>
-        </div>
-    </section>
-
-    <section id="donde" class="donde">
-        <span class="icon-naranja" style="font-size: 1.5rem;">📍</span>
-        <h2>Dónde son las clases</h2>
-        <p>Las clases las doy en un espacio propio, tranquilo y sin distracciones. Está pensado para entrenar con atención, sin apuros y sin que nadie moleste.</p>
-    </section>
-
-    <section class="horarios">
-        <span style="font-size: 1.5rem; display: block; margin-bottom: 10px;">🕒</span>
-        <h2>Horarios</h2>
-        <p>Los horarios no son fijos. Vos me proponés el día y el horario que mejor te queda, y yo te confirmo según disponibilidad.</p>
-    </section>
-
-    <section id="resenas" class="seccion-resenas">
-        <h2>Opiniones de Alumnos</h2>
-        <p class="resenas-sub">Conocé la experiencia de quienes ya entrenaron y mejoraron su nivel.</p>
-
-        <div class="resenas-contenedor">
-            <div class="lista-resenas" id="contenedorResenas">
-                <!-- Reseñas cargadas dinámicamente -->
-            </div>
-
-            <div class="form-resena">
-                <h3>Dejanos tu reseña</h3>
-                <form id="formResena">
-                    <div class="campo-grupo">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" placeholder="Ej: Santiago" required>
-                    </div>
-                    <div class="campo-grupo">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" id="apellido" placeholder="Ej: Coppola" required>
-                    </div>
-                    <div class="campo-grupo">
-                        <label for="usuario">Nombre de usuario (ej: apodo o red social)</label>
-                        <input type="text" id="usuario" placeholder="Ej: santi_tt" required>
-                    </div>
-                    <div class="campo-grupo">
-                        <label for="comentario">¿Qué te parecieron las clases?</label>
-                        <textarea id="comentario" rows="4" placeholder="Contá tu experiencia..." required></textarea>
-                    </div>
-                    <button type="submit" id="btnEnviar" class="btn-enviar-resena">Publicar Reseña</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="final">
-        <h2>¿Empezamos?</h2>
-        <p>Si querés consultar por clases o por el análisis de juego, escribime directamente por WhatsApp.</p>
-        <a href="https://wa.me/5492364543539" class="btn-whatsapp">Escribime por WhatsApp</a>
-    </section>
-
-    <footer class="footer">
-        Mateo Vildoza • Clases de Tenis de Mesa
-    </footer>
-
-</body>
-</html>
+        .campo-grupo input:focus, .campo
